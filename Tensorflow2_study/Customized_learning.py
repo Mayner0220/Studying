@@ -1,3 +1,5 @@
+# Link: https://www.tensorflow.org/tutorials/customization/custom_training?hl=ko
+
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
@@ -46,7 +48,7 @@ print("loss: ", loss(model(inputs), outputs).numpy())
 def train(model, inputs, outputs, learning_rate):
     with tf.GradientTape() as t:
         current_loss = loss(model(inputs), outputs)
-        
+
     dW, db = t.gradient(current_loss, [model.W, model.b])
     model.W.assign_sub(learning_rate * dW)
     model.b.assign_sub(learning_rate * db)
